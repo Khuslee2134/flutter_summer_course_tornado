@@ -104,7 +104,7 @@ void main() {
   print(Button.direction);
   print(Button.getDirection());
   Button.getRandomDirection();
-  print(Button)
+  Button.randomNumber();
 }
 
 
