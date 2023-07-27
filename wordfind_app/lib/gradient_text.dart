@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+
 class GradientText extends StatelessWidget {
   final String text;
   final double size;
@@ -10,14 +11,17 @@ class GradientText extends StatelessWidget {
       text,
       style: TextStyle(
         fontSize: size,
-        foreground: Paint()..shader=
-            LinearGradient(
-              colors: [Color(0xFFE86B02),Color(0xFFFA9541),],
-              begin: Alignment.topLeft,
-              end: Alignment.bottomRight,
-              stops: [0.0661, 0.761],
-              transform: GradientRotation(88.82),
-            ).createShader(const Rect.fromLTWH(0.0, 0.0, 200, 70)),
+        foreground: Paint()
+          ..shader = LinearGradient(
+            colors: [
+              Color(0xFFE86B02),
+              Color(0xFFFA9541),
+            ],
+            begin: Alignment.topCenter,
+            end: Alignment.bottomCenter,
+            stops: [0.0661, 0.761],
+            transform: GradientRotation(88.82),
+          ).createShader(const Rect.fromLTWH(0.0, 0.0, 200, 70)),
       ),
     );
   }
