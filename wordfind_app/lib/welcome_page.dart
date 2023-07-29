@@ -1,3 +1,5 @@
+import 'dart:ffi';
+
 import 'package:flutter/material.dart';
 import 'package:wordfind_app/gradient_letter.dart';
 import 'package:wordfind_app/gradient_text.dart';
@@ -20,34 +22,49 @@ class WelcomePage extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Padding(
-              padding: EdgeInsets.only(top: 200),
+              padding: EdgeInsets.only(top: 120),
             ),
-            Expanded(
-              child: Column(
-                children: [
+            Container(
+              child: Expanded(
+                child: Column(children: [
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       GradientLetter('W'),
+                      Padding(padding: EdgeInsets.only(left: 10),),
                       GradientLetter('O'),
+                      Padding(padding: EdgeInsets.only(left: 10),),
                       GradientLetter('R'),
+                      Padding(padding: EdgeInsets.only(left: 10),),
                       GradientLetter('D'),
+                      Padding(padding: EdgeInsets.only(left: 10),),
                     ],
                   ),
-                  Expanded(child:  GradientText(text: 'Game', size: 31.6),),
-                    ]),
-                  ),
-                  Expanded(child: Image.asset('assets/iCodeGuy.png')),
                   Expanded(
-                    child: GradientText(
-                      text: 'Ready ?',
-                      size: 25,
-                    ),
+                    child: GradientText(text: 'Game', size: 31.6),
                   ),
-                ],
+                ]),
+
               ),
-        margin: EdgeInsets.only(bottom: 193),
+
             ),
+            Expanded(
+              child: Image.asset(
+                'assets/iCodeGuy.png',
+                width: 374,
+                height: 374,
+              ),
+            ),
+            Expanded(
+              child: GradientText(
+                text: 'Ready ?',
+                size: 25,
+              ),
+            ),
+          ],
+        ),
+        margin: EdgeInsets.only(bottom: 193),
+      ),
       floatingActionButton: Container(
         width: 310,
         height: 60,
@@ -60,21 +77,22 @@ class WelcomePage extends StatelessWidget {
           borderRadius: BorderRadius.circular(25),
         ),
         child: ElevatedButton(
-          onPressed: (){},
+          onPressed: () {},
           style: ElevatedButton.styleFrom(
-            backgroundColor: Colors.transparent,
-            elevation: 0,
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(25),
-            )
-          ),
+              backgroundColor: Colors.transparent,
+              elevation: 0,
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(25),
+              )),
           child: Text(
             'Play',
-            style: TextStyle(fontFamily: 'Nunito', fontSize: 33, fontWeight: FontWeight.w700),
-
+            style: TextStyle(
+                fontFamily: 'Nunito',
+                fontSize: 33,
+                fontWeight: FontWeight.w700),
           ),
         ),
-        margin: EdgeInsets.only(bottom:111 , right: 32, left: 33),
+        margin: EdgeInsets.only(bottom: 111, right: 32, left: 33),
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
     );
