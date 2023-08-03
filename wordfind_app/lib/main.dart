@@ -9,7 +9,7 @@ void main() {
       fontFamily: "Ribeye",
 
     ),
-    home: TaskPage(),
+    home: WelcomePage(),
   ));
 }
 
