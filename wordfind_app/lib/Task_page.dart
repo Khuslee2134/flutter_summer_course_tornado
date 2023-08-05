@@ -9,24 +9,23 @@ import 'models/task_model.dart';
 
 class TaskPage extends StatefulWidget {
   final User user;
-  const TaskPage(this.user,{super.key});
+  const TaskPage(this.user, {super.key});
 
   @override
   State<TaskPage> createState() => TaskPageState();
 }
 
 class TaskPageState extends State<TaskPage> {
-  GlobalKey<TaskWidgetState>globalKey = GlobalKey();
-  late List<TaskModel> listQuestions;
+  GlobalKey<TaskWidgetState> globalKey = GlobalKey();
+  late List<TaskModel> listQuestion;
   late User user;
-
   @override
   void initState() {
-    // TODO: implement initState
+    listQuestion = question;
     super.initState();
-    listQuestions =question;
     user = widget.user;
   }
+
 
   @override
   Widget build(BuildContext context) {
@@ -50,16 +49,16 @@ class TaskPageState extends State<TaskPage> {
         child: Column(
           children: [
             Expanded(
-              child: LayoutBuilder(
-                builder: (context, constraints){
-                  return Container(
-                    child: TaskWidget(
+              child: LayoutBuilder(builder: (context, constraints) {
+                return Container(
+                  height: 400,
+                  child: TaskWidget(
                     constraints.biggest,
-                    listQuestions.map((question) => question.clone()).toList(),   Key: globalKey,
-                    ),
-                  );
-                },
-              )
+                    listQuestion.map((question) => question.clone()).toList(),
+                    Key: globalKey,
+                  ),
+                );
+              }),
             ),
           ],
         ),
@@ -67,7 +66,6 @@ class TaskPageState extends State<TaskPage> {
     );
   }
 }
-
 
 // Container(
 // decoration: BoxDecoration(

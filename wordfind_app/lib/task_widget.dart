@@ -7,8 +7,8 @@ import 'package:word_search_safety/word_search_safety.dart';
 
 class TaskWidget extends StatefulWidget {
   final Size size;
-  final List<TaskModel> listQuestions;
-  const TaskWidget(this.size, this.listQuestions, {super.key, Key = Key});
+  final List<TaskModel> listQuestion;
+  const TaskWidget(this.size, this.listQuestion, {super.key, Key? Key});
 
   @override
   State<TaskWidget> createState() => TaskWidgetState();
@@ -22,7 +22,7 @@ class TaskWidgetState extends State<TaskWidget> {
   @override
   void initState() {
     size = widget.size;
-    listQuestions = widget.listQuestions;
+    listQuestions = widget.listQuestion;
     super.initState();
     generatePuzzle();
   }

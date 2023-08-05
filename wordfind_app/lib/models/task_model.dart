@@ -38,12 +38,11 @@ class TaskModel {
     }
     isFull = true;
     String answeredString = puzzles.map((puzzle) => puzzle.currentValue).join("");
-    if(answeredString == answer){
-      return answeredString;
-    }
+    return answeredString == answer;
+
+
   }
   clone(){
-    return
     TaskModel(answer: answer, pathImage: pathImage, question: question);
   }
 }
