@@ -20,13 +20,14 @@ class WelcomePage extends StatelessWidget {
         child: Column(
           children: [
             Padding(padding: EdgeInsets.only(top: 120)),
-            Expanded(child: Column(
+            Expanded(
+                child: Column(
               children: [
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     GradientLetter('W'),
-                    Padding(padding: EdgeInsets.only(left: 10,top: 120)),
+                    Padding(padding: EdgeInsets.only(left: 10, top: 120)),
                     GradientLetter('O'),
                     Padding(padding: EdgeInsets.only(left: 10)),
                     GradientLetter('R'),
@@ -39,10 +40,15 @@ class WelcomePage extends StatelessWidget {
                 Padding(padding: EdgeInsets.only(top: 0)),
               ],
             )),
-            Expanded(child: Image.asset('assets/iCodeGuy.png', width: 374, height: 374)),
-
-            Expanded(child: GradientText(text: 'READY', size: 25,)),
-             Padding(padding: EdgeInsets.only(bottom: 22)),
+            Expanded(
+                child: Image.asset('assets/iCodeGuy.png',
+                    width: 374, height: 374)),
+            Expanded(
+                child: GradientText(
+              text: 'READY',
+              size: 25,
+            )),
+            Padding(padding: EdgeInsets.only(bottom: 22)),
           ],
         ),
       ),
@@ -59,15 +65,17 @@ class WelcomePage extends StatelessWidget {
         ),
         child: ElevatedButton(
           onPressed: () {
-            Navigator.push(context,MaterialPageRoute(builder: (context) => StartPage(),) );
-
+            Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => StartPage(),
+                ));
           },
           style: ElevatedButton.styleFrom(
               backgroundColor: Colors.transparent,
               elevation: 0,
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(25),
-
               )),
           child: Text(
             'Play',
