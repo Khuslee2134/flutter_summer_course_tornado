@@ -1,6 +1,8 @@
 import 'dart:math';
 
 import 'package:flutter/material.dart';
+import 'package:wordfind_app/gradient_letter.dart';
+import 'package:wordfind_app/gradient_text.dart';
 import 'models/Char_model.dart';
 import 'models/task_model.dart';
 import 'package:word_search_safety/word_search_safety.dart';
@@ -8,6 +10,8 @@ import 'package:word_search_safety/word_search_safety.dart';
 class TaskWidget extends StatefulWidget {
   final Size size;
   final List<TaskModel> listQuestion;
+
+
   const TaskWidget(this.size, this.listQuestion, {super.key, Key? Key});
 
   @override
@@ -19,6 +23,7 @@ class TaskWidgetState extends State<TaskWidget> {
   late List<TaskModel> listQuestions;
   int indexQues = 0; // current index question
   int hintCount = 0;
+
   @override
   void initState() {
     size = widget.size;
@@ -33,20 +38,13 @@ class TaskWidgetState extends State<TaskWidget> {
     return SizedBox(
       width: double.maxFinite,
       child: Column(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           Container(
             padding: const EdgeInsets.all(10),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                InkWell(
-                  onTap: () => generateHint(),
-                  child: const Icon(
-                    Icons.healing_outlined,
-                    size: 45,
-                    color: Color(0xFFE86B02),
-                  ),
-                ),
                 Row(
                   children: [
                     InkWell(
@@ -55,8 +53,22 @@ class TaskWidgetState extends State<TaskWidget> {
                       ),
                       child: const Icon(
                         Icons.arrow_back_ios,
-                        size: 45,
+                        size: 30,
                         color: Color(0xFFE86B02),
+                      ),
+                    ),
+                    Container(
+                      alignment: Alignment.center,
+                      padding: const EdgeInsets.all(10),
+                      child: Container(
+                        alignment: Alignment.center,
+                        constraints: BoxConstraints(
+                          maxWidth: size.width / 2 * 1.5,
+                        ),
+                        child: Image.network(
+                          currentQues.pathImage,
+                          fit: BoxFit.contain,
+                        ),
                       ),
                     ),
                     InkWell(
@@ -65,43 +77,18 @@ class TaskWidgetState extends State<TaskWidget> {
                       ),
                       child: const Icon(
                         Icons.arrow_forward_ios,
-                        size: 45,
+                        size: 30,
                         color: Color(0xFFE86B02),
                       ),
                     ),
                   ],
-                )
+                ),
               ],
             ),
           ),
-          Expanded(
-            child: Container(
-              alignment: Alignment.center,
-              padding: const EdgeInsets.all(10),
-              child: Container(
-                alignment: Alignment.center,
-                constraints: BoxConstraints(
-                  maxWidth: size.width / 2 * 1.5,
-                ),
-                child: Image.network(
-                  currentQues.pathImage,
-                  fit: BoxFit.contain,
-                ),
-              ),
-            ),
-          ),
-          Container(
-            padding: const EdgeInsets.all(10),
-            alignment: Alignment.center,
-            child: Text(
-              currentQues.question,
-              style: const TextStyle(
-                fontSize: 25,
-                color: Color(0xFFE86B02),
-                fontWeight: FontWeight.bold,
-              ),
-            ),
-          ),
+         // Expanded(
+            //child:
+         // ),
           Container(
             padding: const EdgeInsets.symmetric(vertical: 30, horizontal: 10),
             alignment: Alignment.center,
@@ -141,13 +128,12 @@ class TaskWidgetState extends State<TaskWidget> {
                         width: constraints.biggest.width / 7 - 6,
                         height: constraints.biggest.width / 7 - 6,
                         margin: const EdgeInsets.all(3),
-                        child: Text(
-                          (puzzle.currentValue ?? '').toUpperCase(),
-                          style: const TextStyle(
-                            fontSize: 25,
-                            fontWeight: FontWeight.bold,
-                          ),
-                        ),
+                        child: GradientLetter(
+                            (puzzle.currentValue ?? '').toUpperCase(),
+                            16,
+                            8,
+                            44,
+                            27),
                       ),
                     );
                   }).toList(),
@@ -155,7 +141,16 @@ class TaskWidgetState extends State<TaskWidget> {
               },
             ),
           ),
+          TextButton(
+              onPressed: () => generateHint(),
+              child: GradientText(
+                text: 'Hint',
+                size: 16,
+                fontfamily: 'Nunito',
+              )),
           Container(
+            height: 197,
+            // margin: EdgeInsets.only(bottom: 0),
             decoration: const BoxDecoration(
               color: Colors.white,
               borderRadius: BorderRadius.only(
@@ -186,28 +181,19 @@ class TaskWidgetState extends State<TaskWidget> {
                             ? const Color(0xFFFBF5F2)
                             : const Color(0xFFE86B02);
 
-                        return Container(
-                          decoration: BoxDecoration(
-                            color: color,
-                            borderRadius: BorderRadius.circular(10),
+                        return TextButton(
+                          style:
+                              TextButton.styleFrom(padding: EdgeInsets.all(1)),
+                          child: GradientLetter(
+                            currentQues.arrayButtons[index].toUpperCase(),
+                            8,
+                            5,
+                            48,
+                            25,
                           ),
-                          alignment: Alignment.center,
-                          child: SizedBox(
-                            height: constraints.biggest.height,
-                            child: TextButton(
-                              child: Text(
-                                currentQues.arrayButtons[index].toUpperCase(),
-                                style: const TextStyle(
-                                  color: Colors.white,
-                                  fontSize: 25,
-                                  fontWeight: FontWeight.bold,
-                                ),
-                              ),
-                              onPressed: () {
-                                if (!statusBtn) setBtnClick(index);
-                              },
-                            ),
-                          ),
+                          onPressed: () {
+                            if (!statusBtn) setBtnClick(index);
+                          },
                         );
                       },
                     );

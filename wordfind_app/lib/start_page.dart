@@ -49,7 +49,7 @@ class _StartPageState extends State<StartPage> {
               Padding(padding: EdgeInsets.only(top: 50)),
               Image.asset('assets/iCodeGuyHead.png'),
               Padding(padding: EdgeInsets.only(top: 20)),
-              GradientText(text: 'Player name', size: 20),
+              GradientText(text: 'Player name', size: 20, fontfamily: 'Ribeye',),
               Padding(padding: EdgeInsets.only(top: 20)),
               InputField(
                 onSubmitted: _createUser,

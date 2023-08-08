@@ -42,7 +42,7 @@ class TaskModel {
 
 
   }
-  clone(){
-    TaskModel(answer: answer, pathImage: pathImage, question: question);
+  TaskModel clone(){
+    return TaskModel(answer: answer, pathImage: pathImage, question: question);
   }
 }

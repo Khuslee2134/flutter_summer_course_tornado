@@ -3,7 +3,8 @@ import 'package:flutter/material.dart';
 class GradientText extends StatelessWidget {
   final String text;
   final double size;
-  const GradientText({super.key, required this.text, required this.size});
+  final String fontfamily;
+  const GradientText({super.key, required this.text, required this.size,required this.fontfamily});
 
   @override
   Widget build(BuildContext context) {
@@ -11,6 +12,7 @@ class GradientText extends StatelessWidget {
       text,
       style: TextStyle(
         fontSize: size,
+        fontFamily: fontfamily,
         foreground: Paint()
           ..shader = LinearGradient(
             colors: [
