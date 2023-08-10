@@ -11,7 +11,6 @@ class TaskWidget extends StatefulWidget {
   final Size size;
   final List<TaskModel> listQuestion;
 
-
   const TaskWidget(this.size, this.listQuestion, {super.key, Key? Key});
 
   @override
@@ -40,6 +39,23 @@ class TaskWidgetState extends State<TaskWidget> {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
+          Row(
+            children: [
+              Image.asset('assets/orange 1.png',height: 25,width: 25,),
+              Padding(padding: EdgeInsets.only(top: 70,right: 5),),
+              Image.asset('assets/orange 2.png',height: 25,width: 25,),
+              Padding(padding: EdgeInsets.only(right: 5),),
+              Image.asset('assets/orange 3.png',height: 25,width: 25,),
+              Padding(padding: EdgeInsets.only(right: 5),),
+              Image.asset('assets/orange 4.png',height: 25,width: 25,),
+              Padding(padding: EdgeInsets.only(right: 5),),
+              Image.asset('assets/orange 5.png',height: 25,width: 25,),
+              Padding(padding: EdgeInsets.only(right: 5),),
+            ],
+            mainAxisAlignment: MainAxisAlignment.center,
+            mainAxisSize: MainAxisSize.min,
+          ),
+          //children: [
           Container(
             padding: const EdgeInsets.all(10),
             child: Row(
@@ -53,7 +69,7 @@ class TaskWidgetState extends State<TaskWidget> {
                       ),
                       child: const Icon(
                         Icons.arrow_back_ios,
-                        size: 30,
+                        size: 25,
                         color: Color(0xFFE86B02),
                       ),
                     ),
@@ -68,6 +84,8 @@ class TaskWidgetState extends State<TaskWidget> {
                         child: Image.network(
                           currentQues.pathImage,
                           fit: BoxFit.contain,
+                          height: 250,
+                          width: 350,
                         ),
                       ),
                     ),
@@ -77,7 +95,7 @@ class TaskWidgetState extends State<TaskWidget> {
                       ),
                       child: const Icon(
                         Icons.arrow_forward_ios,
-                        size: 30,
+                        size: 25,
                         color: Color(0xFFE86B02),
                       ),
                     ),
@@ -86,9 +104,9 @@ class TaskWidgetState extends State<TaskWidget> {
               ],
             ),
           ),
-         // Expanded(
-            //child:
-         // ),
+          // Expanded(
+          //child:
+          // ),
           Container(
             padding: const EdgeInsets.symmetric(vertical: 30, horizontal: 10),
             alignment: Alignment.center,

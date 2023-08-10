@@ -36,7 +36,7 @@ class TaskPageState extends State<TaskPage> {
       backgroundColor: Color(0xFFFBF5F2),
       appBar: AppBar(
         leading: IconButton(
-            icon: Image.asset('assets/arrow_back.png'),
+            icon: Image.asset('assets/exit.png'),
             onPressed: () {
               Navigator.pop(context);
             }),
@@ -48,7 +48,7 @@ class TaskPageState extends State<TaskPage> {
           style: TextStyle(fontSize: 24, color: Color(0xFFE86B02)),
         ),
       ),
-      body: SafeArea(
+      body:SafeArea(
         child: Container(
           decoration: BoxDecoration(
               image: DecorationImage(
