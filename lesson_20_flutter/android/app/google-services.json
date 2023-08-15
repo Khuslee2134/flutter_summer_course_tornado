@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "163930024189",
+    "project_id": "lesson-20-tornado-huslee",
+    "storage_bucket": "lesson-20-tornado-huslee.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:163930024189:android:be88ce6c2b4f038b0d3694",
+        "android_client_info": {
+          "package_name": "com.example.lesson_20_flutter"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "163930024189-uhn5k1e5uc1u0fi0a927p33id6tbav3o.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD8XnYdqS1xhz-Oae6AeCMYQZ8n-FkEexw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "163930024189-uhn5k1e5uc1u0fi0a927p33id6tbav3o.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
