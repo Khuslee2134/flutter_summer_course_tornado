@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "449353415304",
+    "project_id": "icode-gram",
+    "storage_bucket": "icode-gram.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:449353415304:android:1b8ba61ee0ea9845507d3d",
+        "android_client_info": {
+          "package_name": "com.example.icode_gram"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "449353415304-vd0a6ki25ivphs5p1flhag6aku6sdqi5.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDoPS7VUKIh8fhG3gmyO8umL453KGp692E"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "449353415304-vd0a6ki25ivphs5p1flhag6aku6sdqi5.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
