@@ -5,6 +5,25 @@ class AuthMethods {
   final FirebaseAuth _auth = FirebaseAuth.instance;
   final FirebaseFirestore _fireStore = FirebaseFirestore.instance;
 
+  Future<String> loginUser({
+    required String email,
+    required String password,
+  }) async {
+    String result = 'Some error occurred';
+    try {
+      if (email.isNotEmpty || password.isNotEmpty) {
+        await _auth.signInWithEmailAndPassword(
+          email: email, password: password,);
+        result = 'success';
+      } else {
+        result = 'Please enter all the fields';
+      }
+    } catch (error) {
+      result = error.toString();
+    }
+    return result;
+  }
+
   Future<String> signUpUser({
     required String email,
     required String password,
@@ -32,4 +51,5 @@ class AuthMethods {
     }
     return result;
   }
+
 }
