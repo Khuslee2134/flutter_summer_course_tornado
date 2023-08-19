@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:icode_gram/components/input_field.dart';
 import 'package:icode_gram/resources/auth_methods.dart';
 import 'package:icode_gram/screen/sign_up.dart';
+import '../home_screen.dart';
 import '../models/User_.dart';
-import 'home_screen.dart';
 
 User newUser = User(userName: "Guest", password: ' ');
 
